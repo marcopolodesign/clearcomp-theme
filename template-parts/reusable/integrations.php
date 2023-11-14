@@ -1,5 +1,5 @@
 <div class="integrations-container container rounded-2xl bg-gray-100 py-20 flex flex-col jic overflow-hidden my-<?php the_sub_field('margin');?>">
-    <h3 class="uppercase text-black font-semibold text-center">Adapting to your data</h3>
+    <h3 class="uppercase text-black font-semibold text-center"><?php pll_e('Adapting'); ?></h3>
     <h2 class="main-dark-color text-4xl text-center my-5"><?php the_sub_field('grid_title');?></h2>
     <p class="text-black text-2xl text-center max-w-[70%] center"><?php the_sub_field('grid_description');?></p>
 

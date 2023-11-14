@@ -220,4 +220,5 @@ add_action('init', function() {
 	pll_register_string('clearcomp', 'View All');
 	pll_register_string('clearcomp', 'Icerberg Front');
 	pll_register_string('clearcomp', 'Icerberg Behind');
+	pll_register_string('clearcomp', 'Adapting');
 });
