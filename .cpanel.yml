@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/example/public_html/
+    - export DEPLOYPATH=/home1/tizbhxmy/public_html/wp-content/themes/clear-comp 
     - /bin/cp -R images $DEPLOYPATH
