@@ -2,4 +2,33 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home1/tizbhxmy/public_html/wp-content/themes/clear-comp 
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R 404.php $DEPLOYPATH
+    - /bin/cp -R composer.json $DEPLOYPATH
+    - /bin/cp -R inc $DEPLOYPATH
+    - /bin/cp -R page-about.php $DEPLOYPATH
+    - /bin/cp -R phpcs.xml.dist $DEPLOYPATH
+    - /bin/cp -R single.php $DEPLOYPATH
+    - /bin/cp -R LICENSE $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R index.php $DEPLOYPATH
+    - /bin/cp -R page-faq.php $DEPLOYPATH
+    - /bin/cp -R readme.txt $DEPLOYPATH
+    - /bin/cp -R style-rtl.css $DEPLOYPATH
+    - /bin/cp -R README.md $DEPLOYPATH
+    - /bin/cp -R footer.php $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R page-home.php $DEPLOYPATH
+    - /bin/cp -R screenshot.png $DEPLOYPATH
+    - /bin/cp -R style.css $DEPLOYPATH
+    - /bin/cp -R archive.php $DEPLOYPATH
+    - /bin/cp -R functions.php $DEPLOYPATH
+    - /bin/cp -R languages $DEPLOYPATH
+    - /bin/cp -R page-sobre-nosotros.php $DEPLOYPATH
+    - /bin/cp -R search.php $DEPLOYPATH
+    - /bin/cp -R tailwind.config.js $DEPLOYPATH
+    - /bin/cp -R comments.php $DEPLOYPATH
+    - /bin/cp -R header.php $DEPLOYPATH
+    - /bin/cp -R package.json $DEPLOYPATH
+    - /bin/cp -R page.php $DEPLOYPATH
+    - /bin/cp -R sidebar.php $DEPLOYPATH
+    - /bin/cp -R template-parts $DEPLOYPATH
