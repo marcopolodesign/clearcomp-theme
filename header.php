@@ -18,6 +18,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<script src="https://cdn.tailwindcss.com"></script>
 
+
 	<?php wp_head(); ?>
 </head>
 
