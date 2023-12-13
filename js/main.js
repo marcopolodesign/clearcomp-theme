@@ -9,6 +9,7 @@ const runScripts = () => {
   setTimeout(() => {
     moreAnchors();
   }, 3000);
+  
 
   const moreAnchors = () => {
     let anchors = Array.prototype.slice.call(document.querySelectorAll('.anchors, a'));
@@ -148,6 +149,7 @@ const runScripts = () => {
     })
   }
   langSwitcher();
+  googleAnalytics()
 }
 
 const faqQuestions = () => {
@@ -322,6 +324,7 @@ barba.init({
               onComplete() {
                 resolve();
                 header.classList.remove('loading');
+    
                 // header.classList.add('scrolled');
   
               },
@@ -455,6 +458,14 @@ barba.init({
     ],
     debug: true,
 });
+
+function googleAnalytics() {
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PF6VK8MJ');
+}
   
 
 const contact = () => {
