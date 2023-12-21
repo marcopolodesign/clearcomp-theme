@@ -1,6 +1,6 @@
 <div class="fixed top-0 left-0 w-full min-h-100 flex contact-form-container opacity-0  pointer-events-none fw3 z-[999999]">
-  <div class="contact-bg min-h-100 w-[50%] desktop"></div>
-  <div class="w-[50%] bg-[var(--mainColorLight)] contact-content container p-20 flex relative">
+  <div class="contact-bg min-h-100 sm:w-[50%] desktop"></div>
+  <div class="sm:w-[50%] bg-[var(--mainColorLight)] contact-content container p-20 flex relative">
       <div id="close-contact" class="absolute top-0 right-0 white container-xs p-10 anchor text-black font-semibold">
         <p class="black">Close</p>
       </div>
