@@ -11,7 +11,7 @@
             endwhile; endif;
           ?>
 
-		  <a href="#/contact" class="btn btn-primary block bg-main-color hover:bg-[var(--mainDarkColor)] text-white w-max smooth-t">Contact Us</a>
+		  <a href="/#contact" class="btn btn-primary block bg-main-color hover:bg-[var(--mainDarkColor)] text-white w-max smooth-t">Contact Us</a>
         </div>
       </div>
 

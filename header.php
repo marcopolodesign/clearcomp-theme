@@ -70,7 +70,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-	<div class="cursor desktop dn"></div>
+	<!-- <div class="cursor desktop dn"></div> -->
 	<div class="flex pre-load">
 		<div class="bg-main-dark-color"></div>
 		<div class="bg-main-dark-color"></div>

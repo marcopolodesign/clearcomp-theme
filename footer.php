@@ -14,7 +14,7 @@
 </div> <!-- End Barba Container -->
 
 	<div class=" mt-80 container flex flex-col justify-center items-center">
-		<h2 class="text-6xl text-gray-800 text-center mb-4"><?php pll_e('Calculating'); ?> <span id="yearCounter">2023</span></h2>
+		<h2 class="text-6xl text-gray-800 text-center mb-4"><?php pll_e('Calculating'); ?> <span id="yearCounter"><?php echo date('Y'); ?></span></h2>
 		<div class="w-3/4">
 			<img src="/wp-content/uploads/2023/09/network-3537400_640-1.png" />
 		</div>
@@ -26,10 +26,10 @@
 			</div>
 
 			<div class="flex sm:flex-row gap-2 items-center">
-				<a href="http://x.com/clearcomp" target='_blank' class="block w-10">
+				<!-- <a href="http://x.com/clearcomp" target='_blank' class="block w-10">
 					<?php get_template_part('template-parts/assets/x'); ?>
-				</a>
-				<a href="http://x.com/clearcomp" target='_blank' class="block w-10">
+				</a> -->
+				<a href="https://www.linkedin.com/company/clearcomp/?trk=public_profile_experience-item_profile-section-card_image-click&originalSubdomain=ar" target='_blank' class="block w-10">
 					<?php get_template_part('template-parts/assets/linked'); ?>
 				</a>
 

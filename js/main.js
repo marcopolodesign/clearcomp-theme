@@ -3,11 +3,13 @@ let preLoad = document.querySelectorAll('.pre-load > div:not(:last-child)');
 let header = document.querySelector('header')
 let preloaderCaption = document.querySelector('.pre-load div > span');
 let loadingCaption = document.querySelector('.pre-load div p');
+let menuTL;
+let menu;
 
 const runScripts = () => {
   pageName = document.querySelector('[data-barba=container]');
   setTimeout(() => {
-    moreAnchors();
+    // moreAnchors();
   }, 3000);
   
 
@@ -278,11 +280,11 @@ barba.init({
           closeMenuDropdown()
   
           if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-          // menuTL.reverse();
+          menuTL.reverse();
           
           setTimeout(() => {
-            // menu.classList.add('o-0');
-            // menu.classList.add('pointers-none');
+            menu.classList.add('opacity-0');
+            menu.classList.add('pointer-events-none');
           }, 1200);
   
         }
@@ -773,8 +775,6 @@ const menuScroll = ()=> {
 menuScroll();
 
 
-let menuTl;
-let menu;
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 
