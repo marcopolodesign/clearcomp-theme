@@ -1,5 +1,5 @@
 <div class="container grid-secondary mx-auto my-20">
-    <h2 class="text-center text-4xl mb-10 text-gray-800">Discover ClearComp solutions by role</h2>
+    <h2 class="text-center text-4xl mb-10 text-gray-800"><?php pll_e('Discover Solutions'); ?></h2>
     <div class=" mt-10 flex column-mobile gap-20 justify-between">
 
     <?php

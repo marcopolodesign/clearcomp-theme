@@ -221,4 +221,5 @@ add_action('init', function() {
 	pll_register_string('clearcomp', 'Icerberg Front');
 	pll_register_string('clearcomp', 'Icerberg Behind');
 	pll_register_string('clearcomp', 'Adapting');
+	pll_register_string('clearcomp', 'Discover Solutions');
 });
