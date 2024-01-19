@@ -218,8 +218,8 @@ add_action('init', function() {
 	pll_register_string('clearcomp', 'Info');
 	pll_register_string('clearcomp', 'FAQ');
 	pll_register_string('clearcomp', 'View All');
-	pll_register_string('clearcomp', 'Icerberg Front');
-	pll_register_string('clearcomp', 'Icerberg Behind');
+	pll_register_string('clearcomp', 'IcerbergFront');
+	pll_register_string('clearcomp', 'IcerbergBehind');
 	pll_register_string('clearcomp', 'Adapting');
 	pll_register_string('clearcomp', 'Discover Solutions');
 });

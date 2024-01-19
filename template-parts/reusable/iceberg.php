@@ -27,7 +27,7 @@
 
             <div class="flex flex-col justify-between  ">
                 <div class="group-[.hovered]:opacity-10">
-                    <h2 class="text-gray-800 text-2xl mb-5"><?php pll_e('Iceberg Front'); ?></h2>
+                    <h2 class="text-gray-800 text-2xl mb-5"><?php pll_e('IcebergFront'); ?></h2>
                     <div class="flex jic">
                         <?php if( have_rows('top_items') ): while ( have_rows('top_items') ): the_row(); ?>
 
@@ -49,7 +49,7 @@
                 <span class="line-iceberg !top-[31.1%] !w-[92%] group-[.hovered]:opacity-10"></span>
 
                 <div class="mt-20 group-[.hovered]:opacity-10">
-                    <h2 class="text-gray-800 text-2xl mb-5"><?php pll_e('Iceberg Behind'); ?></h2>
+                    <h2 class="text-gray-800 text-2xl mb-5"><?php pll_e('IcebergBehind'); ?></h2>
                    
                     <div class="flex jic flex-wrap">
                         <?php if( have_rows('bottom_items') ): while ( have_rows('bottom_items') ): the_row(); ?>
