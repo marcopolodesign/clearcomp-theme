@@ -12,6 +12,67 @@ const runScripts = () => {
     // moreAnchors();
   }, 3000);
   
+  const contact = () => {
+    let hrefs = document.querySelectorAll('a');
+    hrefs.forEach((a) => {
+      if (a.href.indexOf('#contact') > -1) {
+        a.classList.add('barba-prevent');
+        // console.log(a)
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+  
+          let timeline = gsap.timeline({
+            defaults: {
+              ease: Expo.easeOut,
+              duration: 0.7,
+            },
+          });
+  
+          timeline
+            .set(container, { pointerEvents: 'all', opacity: 1 })
+            .set(contact, { x: '100%' })
+            .set(bg, { opacity: 0 })
+            .to(contact, { x: '0' }, 0)
+            .to(bg, { opacity: 1 }, 0.4);
+        });
+      }
+    });
+    let close = document.querySelector('#close-contact');
+    let bg = document.querySelector('.contact-bg');
+    let contact = document.querySelector('.contact-content');
+    let container = document.querySelector('.contact-form-container');
+  
+    close.addEventListener('click', () => {
+      console.log('close')
+      let timeline = gsap.timeline({
+        defaults: {
+          ease: Expo.easeOut,
+          duration: 0.5,
+        },
+      });
+  
+      timeline
+        .set(container, { pointerEvents: 'none' })
+        .to(contact, { x: '100%' })
+        .to(bg, { opacity: 0 }, 0);
+    });
+  
+    let form = document.querySelector('#wpforms-form-207');
+    console.log(form)
+    if (form) {
+      form.addEventListener('submit', function() {
+          dataLayer.push({
+              'event': 'formSubmit',
+              'formId': 'contact-form',
+              'formName': 'Contact Form'
+          });
+          console.log('sending forms')
+      });
+  }
+  
+  };
+  
+  contact();
 
   const moreAnchors = () => {
     let anchors = Array.prototype.slice.call(document.querySelectorAll('.anchors, a'));
@@ -466,67 +527,7 @@ function googleAnalytics() {
 }
   
 
-const contact = () => {
-  let hrefs = document.querySelectorAll('a');
-  hrefs.forEach((a) => {
-    if (a.href.indexOf('#contact') > -1) {
-      a.classList.add('barba-prevent');
-      // console.log(a)
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
 
-        let timeline = gsap.timeline({
-          defaults: {
-            ease: Expo.easeOut,
-            duration: 0.7,
-          },
-        });
-
-        timeline
-          .set(container, { pointerEvents: 'all', opacity: 1 })
-          .set(contact, { x: '100%' })
-          .set(bg, { opacity: 0 })
-          .to(contact, { x: '0' }, 0)
-          .to(bg, { opacity: 1 }, 0.4);
-      });
-    }
-  });
-  let close = document.querySelector('#close-contact');
-  let bg = document.querySelector('.contact-bg');
-  let contact = document.querySelector('.contact-content');
-  let container = document.querySelector('.contact-form-container');
-
-  close.addEventListener('click', () => {
-    console.log('close')
-    let timeline = gsap.timeline({
-      defaults: {
-        ease: Expo.easeOut,
-        duration: 0.5,
-      },
-    });
-
-    timeline
-      .set(container, { pointerEvents: 'none' })
-      .to(contact, { x: '100%' })
-      .to(bg, { opacity: 0 }, 0);
-  });
-
-  let form = document.querySelector('#wpforms-form-207');
-  console.log(form)
-  if (form) {
-    form.addEventListener('submit', function() {
-        dataLayer.push({
-            'event': 'formSubmit',
-            'formId': 'contact-form',
-            'formName': 'Contact Form'
-        });
-        console.log('sending forms')
-    });
-}
-
-};
-
-contact();
 
 
 const animatePreLoader = () => {
