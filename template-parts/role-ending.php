@@ -4,7 +4,7 @@
 
     <?php
         $lang = pll_current_language();
-        if ($lang = 'es') : $langID = 478; else : $langID = 6; endif;
+        if ($lang === 'es') : $langID = 478 ; else : $langID = 6; endif;
 
         if( have_rows('reusable', $langID) ):
             while( have_rows('reusable', $langID) ): the_row();
