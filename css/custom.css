@@ -4,20 +4,27 @@ fonts
 */
 
 :root {
-    --mainGradient: linear-gradient(92deg, #E74747 17.73%, #700000 93.54%);
-    --mainColor: #E74747;
-    --mainDarkColor: #700000;
-    --mainColorLight: #FDEDED;
-    --secondaryColor: #FCC64C;
+    --mainColor: #1660B1;
+    --mainDarkColor: #05164D;
+    --mainColorLight: #E7EEFE;
+    --secondaryColor: #BADCD4;
+    --terciaryColor: #C9E0F8;
+    --mainBorder : #EDEAEA;
+    --lightGrey : #F9F9F9;
+    --grey: #F5F5F5;
+    --white: #fff;
     --smooth: all 0.45s cubic-bezier(0.4, 0, 0, 1);
     --border-radius: 8px;
     --smoothT: cubic-bezier(0.4, 0, 0, 1);
+    --mainGradient: linear-gradient(92deg, var(--mainColor) 17.73%, var(--mainDarkColor) 93.54%);
+    --secondaryGradient: linear-gradient(92deg, var(--mainColor) 17.73%, var(--terciaryColor) 93.54%);
+
 }
 
 @font-face {
     font-family: 'Graphik';
-    src: url(./fonts/Graphik-Light.woff) format('woff'),
-    url(./fonts/Graphik-Light.woff2) format('woff2');
+    src: url(./fonts/Graphik-Regular.woff) format('woff'),;
+    /* url(./fonts/Graphik-Light.woff2) format('woff2'); */
     font-weight: 300;
     font-style: normal;
 }
@@ -55,9 +62,19 @@ div[data-barba='container'] {
 
 a.btn-primary {
     margin-top: 40px;
-    font-weight: 600;
-    padding: 15px 30px;
+    font-size: 16px ;
+    font-weight: 500;
+    padding: 10px 45px;
+    border-radius: 2px;
+    transition: var(--smooth)
+}
+
+a.btn-primary.main-color-bg:hover {
+    background-color: var(--mainDarkColor);
+    color: var(--terciaryColor);
+    padding: 10px 55px;
     border-radius: 6px;
+
 }
 
 .white-arrow > * path {
@@ -117,6 +134,13 @@ a.btn-primary {
     color: transparent; /* Make the text transparent */
   }
 
+  .secondary-gradient-text {
+    background-image: var(--secondaryGradient);
+    -webkit-background-clip: text; /* For older versions of webkit-based browsers */
+    background-clip: text; /* Apply the text as the clipping mask */
+    color: transparent; /* Make the text transparent */
+  }
+
   .pre-load > div:not(:last-child) {
     width: 33.33333%;
 }
@@ -147,15 +171,16 @@ a.btn-primary {
 }
 
 @media (min-width: 769px) {
-
-
-header.scrolled {
-    transform: translateY(-10px);
-    opacity: 0;
-    -webkit-filter: blur(4px);
-    filter: blur(4px);    
+    header.scrolled {
+        transform: translateY(-10px);
+        opacity: 0;
+        -webkit-filter: blur(4px);
+        filter: blur(4px);    
+    }
 }
 
+header.hidd {
+    opacity: 0
 }
 
   /* Reusable Content */
@@ -303,6 +328,11 @@ div[data-barba='container'].home .faq-item::after {
 
  .wpforms-container input.wpforms-field-medium, .wpforms-container select.wpforms-field-medium, .wpforms-container .wpforms-field-row.wpforms-field-medium {
     max-width: 100% !important;
+ }
+
+
+ div[data-barba='container'].mt-0 {
+    margin-top: 0px !important
  }
 
 
@@ -618,6 +648,7 @@ header {
 .about-icon-grid > div {
     padding: 5px !important;
 }
+
 
 div[data-barba='container'].faq > section {
    padding-top: 0px !important
