@@ -10,7 +10,7 @@
     <?php endif; ?>
 </div>
 
-<div class='absolute w-full h-full top-0 left-0  flex  justify-between align-stretch overflow-hidden rounded-[8x]'>
+<div class='absolute w-full h-full top-0 left-0  flex  justify-between align-stretch overflow-hidden rounded-[8px]'>
         <svg class="self-end" width="315" height="218" viewBox="0 0 315 218" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g style="mix-blend-mode:color-burn">
             <path d="M190.903 36.815L314.877 311.473L-55.3896 311.473L-55.3897 0.30957L190.903 36.815Z" fill="#7A7A7A"/>

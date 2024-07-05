@@ -26,7 +26,7 @@ if ($isFullWidth) {
 
 <div class="text-images flex column-mobile justify-between  container mx-auto sm:max-w-[unset] <?php echo $isReversed; echo ' '; echo $fullWidthStyles; ?> my-<?php the_sub_field('margin');?>  <?php if (get_sub_field('layout') === 'single'): echo 'items-stretch'; else : echo 'items-center' ; endif; ?>">
 
-    <div class="text-content  <?php if (get_sub_field('layout') === 'single'):  echo 'w-[50%]'; else : echo 'w-[45%]'; endif;?>  relative z-10 flex flex-col justify-center <?php if (get_sub_field('layout') === 'single'): echo 'bg-[var(' . $bgColor . ')] text-[var(--' . $textColor . ')] rounded-[var(--border-radius)]  overflow-hidden '; endif; if (get_sub_field('bullets')): echo 'px-20 py-24'; else: echo 'px-20 py-36'; endif?> ">
+    <div class="text-content  <?php if (get_sub_field('layout') === 'single'):  echo 'w-[50%]'; else : echo 'w-[45%]'; endif;?>  relative z-10 flex flex-col justify-center <?php if (get_sub_field('layout') === 'single'): echo 'bg-[var(' . $bgColor . ')] text-[var(--' . $textColor . ')] rounded-[var(--border-radius)]  overflow-hidden '; endif; if (get_sub_field('bullets')): echo 'px-20 py-12 md:py-24'; else: echo 'px-20 py-16 md:py-36 mb-10'; endif?> ">
         <?php if (get_sub_field('title')): ?>
             <h1 class="<?php echo $fontSize . ' ' . $fontColor; ?> mb-3 font-medium"><?php echo get_sub_field('title')['content']; ?></h1>
         <?php endif; ?>
@@ -67,8 +67,10 @@ if ($isFullWidth) {
             <a class="button btn btn-primary main-color-bg self-start text-white mt-8 inline-block" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php endif; ?>
 
-        <?php if (get_sub_field('layout') === 'single'): 
+        <?php if (get_sub_field('layout') === 'single' && !in_array($bgColor, ['--white', '--secondaryColor'])): 
             get_template_part('template-parts/assets/line-gradients');   
+         elseif (get_sub_field('layout') === 'grid') :
+            get_template_part('template-parts/assets/box-gradients');
          endif; ?>
     </div>
 

@@ -33,7 +33,7 @@
 					<?php get_template_part('template-parts/assets/linked'); ?>
 				</a>
 
-				<p class="text-[#B6B6B6] ml-5 text-xs"><?php pll_e('Copyright'); ?></p>
+				<p class="text-[#B6B6B6] ml-5 text-xs"><?php pll_e('Copyright'); ?>Ⓡ</p>
 			</div>
 		</div>
 

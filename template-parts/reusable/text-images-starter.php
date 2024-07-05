@@ -21,13 +21,13 @@ endif;
             <h1 class="<?php echo $fontSize . ' ' . $fontColor; ?> mb-3 font-medium"><?php echo get_sub_field('title')['content']; ?></h1>
         <?php endif; ?>
         <?php if (get_sub_field('content')): ?>
-            <p><?php the_sub_field('content');?> </p>
+            <div class="<?php if (!get_sub_field('bullets')): echo 'mb-10'; endif; ?>"><?php the_sub_field('content');?> </div>
         <?php endif; ?>
 
         <?php if (get_sub_field('bullets')): ?>
-            <ul class="my-10 flex justify-between items-stretch gap-10">
+            <ul class="my-10 flex md:flex-row flex-col justify-between  items-stretch gap-10">
                 <?php while (have_rows('bullets')): the_row(); ?>
-                    <li class="flex flex-col bg-[var(--lightGrey)] gap-2 items-start justify-between mb-5 last:border-b-0 p-6 rounded-md flex-1">
+                    <li class="flex flex-col bg-[var(--lightGrey)] gap-2 items-center md:items-start justify-between mb-5 last:border-b-0 p-6 rounded-md flex-1">
                     <?php $image = get_sub_field('bullet_icon');
                           if( $image ): ?>
                           <div class="w-16 bullet-icon-container rounded-full mb-5">
@@ -35,7 +35,7 @@ endif;
                           </div>
                     <?php endif; ?>
                     <div class="">
-                        <p class="text-black text-left"><?php the_sub_field('bullet_content'); ?></p>
+                        <p class="text-black text-center md:text-left"><?php the_sub_field('bullet_content'); ?></p>
                     </div>
                     </li>
                 <?php endwhile; ?>

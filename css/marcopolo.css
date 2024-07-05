@@ -161,12 +161,12 @@
     transition: var(--smooth)
   }
   
-  header {
+  header, .alerts-container {
     z-index: 99;
     transition: all 0.3s ease;;
   }
   
-  header.scrolled {
+  header.scrolled, .alerts-container.scrolled{
     /* padding:10px 65px; */
     backdrop-filter: blur(4.5px);
     -webkit-backdrop-filter: blur(4.5px);
