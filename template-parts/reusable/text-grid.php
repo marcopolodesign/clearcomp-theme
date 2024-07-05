@@ -1,4 +1,4 @@
-<div class="container-left mt-52 icon-grid-container">
+<div class="container mt-52 icon-grid-container">
     <div class="relative sm:gap-10 sm:flex">
         <div class="sm:w-2/4 w-full ml-auto mr-0 mt-10 sticky sm:top-[120px] relative-m h-max">
             <h2 class="text-6xl text-gray-800 mb-10 pt-20"><?php the_sub_field('title');?></h2>

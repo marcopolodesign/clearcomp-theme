@@ -203,7 +203,32 @@ const runScripts = () => {
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
     // animatePosts();
   }
+  
+  const removeSolutionsEnd = () => {
+    let solutions = Array.from(document.querySelectorAll('.solutions-ending div > h2'));
+    if (solutions.length > 0) {
+        document.querySelectorAll('.solutions-ending div > a').forEach(a => {
+          a.classList.remove('hidden');
+          a.style.flex='1';
+        })
 
+      
+        let OGSolutionsContainer = document.querySelector('.solutions-ending > div');
+        let pageName = document.querySelector('[data-barba-namespace]');
+        
+        // Get the namespace from the pageName element
+        let namespace = pageName.getAttribute('data-barba-namespace');
+        
+        // Find the index of the element that matches the namespace
+        let matchingIndex = solutions.findIndex(s => s.textContent === namespace);
+
+        document.querySelectorAll('.solutions-ending div > a')[matchingIndex].classList.add('hidden');
+        
+        console.log(matchingIndex);
+    }
+  }
+
+  removeSolutionsEnd();
 
   const langSwitcher = ()=> {
     let switchers = document.querySelectorAll('.lang-switcher > *');
@@ -303,6 +328,16 @@ const showInfoOnHover = (target, trigger, targetContainer) => {
   })
 }
 
+const headerColor = () => {
+  let headerColor = document.querySelector('div[data-barba=container]').getAttribute('data-header-color');
+  if (headerColor) {
+    header.classList.add(headerColor);
+  } else {
+    header.classList.remove('is-home');
+  }
+}
+
+
 
 const steps = () => {
   const steps = document.querySelectorAll('.step-inner');
@@ -335,7 +370,8 @@ barba.init({
       {
         leave({ current, next, trigger }) {
          
-          header.classList.remove('scrolled');
+          header.classList.remove('scrolled', 'is-home');
+          header.classList.remove('hidd');
           header.classList.add('loading');
           document.querySelector("header").classList.remove('menu-open')
           closeMenuDropdown()
@@ -354,6 +390,7 @@ barba.init({
             // Set Pre Loader Defaults
   
             // randomPhrases();
+        
           
             const loadEnter = gsap.timeline({
               defaults: {
@@ -383,6 +420,7 @@ barba.init({
               top: 0,
             });
             runScripts();
+            headerColor();
             const loadLeave = gsap.timeline({
               onComplete() {
                 resolve();
@@ -405,10 +443,19 @@ barba.init({
             .call (()=> {
             if (
               pageName.getAttribute('data-barba-namespace') == 'home' ||
-              pageName.getAttribute('data-barba-namespace') == 'home - español'
+              pageName.getAttribute('data-barba-namespace') == 'home - español' || 
+              pageName.getAttribute('data-barba-namespace') == 'Home' ||
+              pageName.getAttribute('data-barba-namespace') == 'about' 
             ) {
                 console.log('animating from regular')
                 animateLanding();
+              }
+
+              let secondaryStarter = document.querySelector('.secondary-starter');
+
+              if (secondaryStarter) {
+                console.log('secondary Landing from regular')
+                animateSecondaryLanding();
               }
             })
           });
@@ -469,6 +516,8 @@ barba.init({
     afterEnter() {
       faqQuestions();
       changeBgColorOnEnterViewport();
+      animateNumbers();
+
     }
   }, 
 
@@ -477,6 +526,7 @@ barba.init({
     afterEnter() {
       faqQuestions();
       changeBgColorOnEnterViewport();
+      animateNumbers();
     }
   }, 
    {
@@ -553,6 +603,12 @@ const animatePreLoader = () => {
   .to(preLoad,{ y: "-110%", stagger: 0.05}, 0.4)
   .call (()=> {
     animateLanding();
+    let secondaryStarter = document.querySelector('.secondary-starter');
+
+    if (secondaryStarter) {
+      console.log('secondary Landing from regular')
+      animateSecondaryLanding();
+    }
     console.log('animating from animatePreLoader fn')
   })
 
@@ -658,7 +714,6 @@ const animateNumbers = () => {
   });
 };
 
-animateNumbers();
 
 
 const dropHolder = document.querySelector('.menu-dropdown-container');
@@ -737,10 +792,20 @@ window.addEventListener('scroll', checkScrollPosition);
 
 const animateLanding = () => {
 let holder = document.querySelectorAll('.childs-animate');
+let blocks = document.querySelectorAll('#home-svg-container')
 
-  holder.forEach(h => {
+// combine the two arrays
+let all;
+
+if (blocks.length > 0) {
+   all = [...holder, ...blocks]
+} else {
+   all = holder;
+}
+
+  all.forEach(h => {
     let children = Array.prototype.slice.call(h.children)
-       console.log(children);
+       console.log(children, 'CHILDREN');
       let animateTL = gsap.timeline({
         defaults: {
           ease: "power4.inOut",
@@ -755,18 +820,78 @@ let holder = document.querySelectorAll('.childs-animate');
   })
 }
 
+function removeSvgElements(children) {
+  for (let i = 0; i < children.length; i++) {
+      if (children[i].tagName.toLowerCase() === 'g' || children[i].tagName.toLowerCase() === 'path' || children[i].tagName.toLowerCase() === 'svg' || children[i].classList.contains('svg-container')) {
+          children.splice(i, 1);
+          i--; // Adjust the index after removal
+      }
+  }
+  return children;
+}
+
+const animateSecondaryLanding = () => {
+  let container = document.querySelector('.secondary-starter')
+  let children;
+  if (container) {
+    children = Array.from(container.querySelectorAll('*')); // Convert NodeList to Array
+  }
+  let svgContainer = document.querySelector('.svg-container')
+
+  // loop over the children and remove the svg's from the array 
+
+  let newChildren = removeSvgElements(children);
+
+  let animateTL = gsap.timeline({
+    defaults: {
+      ease: "power4.inOut",
+      duration: 0.7,
+      // delay: 0.5
+    }
+  })
+  animateTL
+  .set(newChildren, {opacity: 0, y: 100})
+  .call (()=> {
+    container.classList.add('animate')
+  })
+  .to(newChildren, {opacity: 1, y: 0,  stagger: 0.05 })
+  .call (()=> {
+    if (svgContainer) {
+      svgContainer.classList.add('animate')
+    }
+  })
+
+}
+
+
+
 const menuScroll = ()=> {
   let header = document.querySelector('header');
+  let alerts = document.querySelector('.alerts-container')
   let prevScroll = 0;
+
+  if (pageName.classList.contains('home') || pageName.classList.contains('about')) {
+    header.classList.add('is-home');
+  }
+
+  // let wasHidden = document.querySelector('header').classList.contains('hidd');
   document.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    const currentScroll = window.scrollY;
 
     if (currentScroll < 100) {
       header.classList.remove('scrolled');
+      alerts.classList.remove('scrolled')
+      if (pageName.classList.contains('home') || pageName.classList.contains('about')) {
+        header.classList.add('is-home');
+      }
     } else if (currentScroll > 100 && prevScroll < currentScroll) {
       header.classList.add('scrolled');
+      alerts.classList.add('scrolled')
+      header.classList.remove('hidd');
+      header.classList.remove('is-home')
     } else if (prevScroll - 15 > currentScroll) {
       header.classList.remove('scrolled');
+      alerts.classList.remove('scrolled')
     }
 
     prevScroll = currentScroll;
@@ -845,29 +970,35 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 
 function changeBgColorOnEnterViewport() {
   const grid = document.querySelector('.about-icon-grid'); // Parent container
-  const childDivs = grid.querySelectorAll('div'); // Child divs
+  const childDivs = document.querySelectorAll('.about-icon-grid > div'); // Child divs
+  let lastScrollTop = 0; // Variable to keep track of the last scroll position
 
   // Create an Intersection Observer
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // The element is entering or leaving the viewport
-        const childDiv = entry.target;
+      // Get the current scroll position
+      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Check if the child div has any of the specified classes
-        if (childDiv.classList.contains('bg-main-colorr')) {
-          grid.style.backgroundColor = 'var(--mainColor)';
-        } else if (childDiv.classList.contains('bg-secondary-colorr')) {
-          grid.style.backgroundColor = 'var(--secondaryColor)';
-        } else if (childDiv.classList.contains('bg-main-darkk')) {
-          grid.style.backgroundColor = 'var(--mainDarkColor)';
-        }
+      // Determine if scrolling downwards or upwards
+      const isScrollingDown = currentScrollTop > lastScrollTop;
+
+      // Update the last scroll position
+      lastScrollTop = currentScrollTop;
+
+      if (isScrollingDown && entry.intersectionRatio < 0.5) {
+        // Scrolling downwards and element is more than 50% out of the viewport
+        const childDiv = entry.target;
+        childDiv.classList.add('hideaway');
+      } else if (!isScrollingDown && entry.intersectionRatio >= 0.5) {
+        // Scrolling upwards and element is at least 50% inside the viewport
+        const childDiv = entry.target;
+        childDiv.classList.remove('hideaway');
       }
     });
   }, {
     root: null, // Use the viewport as the root
     rootMargin: '0px',
-    threshold: [0, 0.5, 1] // Observe when element enters, exits, and fully intersects
+    threshold: [0.5] // Trigger when 50% of the element is visible
   });
 
   // Start observing each child div
@@ -877,5 +1008,5 @@ function changeBgColorOnEnterViewport() {
 }
 
 // Call the function to initiate the observation
-
+changeBgColorOnEnterViewport();
 

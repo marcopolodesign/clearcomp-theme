@@ -1,7 +1,7 @@
 <?php
 
 $language = pll_current_language();
-echo $language;
+// echo $language;
 
 if ($language == 'es') {
     $langID = 478;
@@ -9,7 +9,7 @@ if ($language == 'es') {
     $langID = 6;
 }
 
-echo $langID;
+// echo $langID;
 if (get_field('alert_content', $langID)): 
     
 $link = get_field('call_to_action', $langID);

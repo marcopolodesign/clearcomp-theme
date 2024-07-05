@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div data-barba="container" class="home" data-barba-namespace="home" data-header-color="dark">
+<div data-barba="container" class="home mt-0" data-barba-namespace="home" data-header-color="is-home">
    
   <!-- Testing Cpanel! -->
     <?php get_template_part('template-parts/reusable'); 

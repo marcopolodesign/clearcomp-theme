@@ -1,6 +1,6 @@
 <div class="container rounded-xl bg-gray-100 flex p-10 my-<?php the_sub_field('margin');?> relative overflow-hidden group hover:bg-[var(--mainColor)] smooth-t hover:scale-[0.98]">
     <div class="py-20 flex flex-col jic m-auto">
-        <h3 class="text-6xl gradient-text font-normal text-center px-20 group-hover:!text-black smooth-t"><?php the_sub_field('title');?></h3>
+        <h3 class="text-6xl gradient-text font-normal text-center px-20 group-hover:!text-white smooth-t"><?php the_sub_field('title');?></h3>
         <?php 
         $link = get_sub_field('call_to_action');
         if( $link ): 

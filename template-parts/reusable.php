@@ -19,6 +19,9 @@ if( have_rows('reusable') ): while ( have_rows('reusable') ) : the_row();
     elseif (get_row_layout() == 'text_images') :
         get_template_part('template-parts/reusable/text-images');
 
+        elseif (get_row_layout() == 'text_images_starter') :
+            get_template_part('template-parts/reusable/text-images-starter');
+
     elseif (get_row_layout() == 'steps') : 
         get_template_part('template-parts/reusable/steps');
 

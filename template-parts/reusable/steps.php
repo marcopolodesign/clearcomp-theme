@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="flex items-center step-n-holder relative cursor-pointer">
-                    <h3 class="bg-[#FCC64C] p-5 text-2xl font-semibold step-n max-w-[88px]"><?php echo $row_index; ?></h3>
+                    <h3 class="bg-[#BADCD4] p-5 text-2xl font-semibold step-n max-w-[88px]"><?php echo $row_index; ?></h3>
                     <h3 class="font-normal text-gray-600 text-holder text-xl absolute left-1/2 -top-1/2 -rotate-90 whitespace-nowrap hover:text-[var(--mainColor)]" style="transform-origin: left;"><?php the_sub_field('title');?></h3>
                     <h3 class="font-medium black ml-5 text-active text-xl"><?php the_sub_field('title');?></h3>
                 </div>

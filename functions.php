@@ -223,3 +223,4 @@ add_action('init', function() {
 	pll_register_string('clearcomp', 'Adapting');
 	pll_register_string('clearcomp', 'Discover Solutions');
 });
+
