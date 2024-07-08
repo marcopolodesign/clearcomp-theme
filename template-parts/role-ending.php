@@ -10,7 +10,7 @@
             while( have_rows('reusable', $langID) ): the_row();
         if( have_rows('secondary_grid_content', $langID) ):  while( have_rows('secondary_grid_content', $langID) ) : the_row(); ?>
 
-    <a href="<?php the_sub_field('link');?>" class="solution rounded-2xl group hover:-translate-y-4 smooth-t">
+    <a href="<?php the_sub_field('link');?>" class="solution solution-link-end rounded-2xl group hover:-translate-y-4 smooth-t">
         <div class="grid-image mb-10 relative">
             <?php 
             $image = get_sub_field('grid_image', $langID);
@@ -20,17 +20,23 @@
             <?php endif; ?>
         </div>
         <div>
-            <div class="flex gap-2 mb-4">
+            <div class="flex gap-2 mb-4 items-center ">
                 <?php 
                 $icon = get_sub_field('grid_icon', $langID);
                 if( !empty( $icon ) ): ?>
-                <div class=" w-10">
+                <div class="w-10">
                  <img class="margin-auto" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
                 </div>
                 <?php endif; ?>
-                <h3 class="text-black text-4xl group-hover:text-[var(--mainColor)]"><?php the_sub_field('grid_title', $langID); ?></h3>
+                <div class="flex flex-col">
+                    <h3 class="text-black text-4xl group-hover:text-[var(--mainColor)]"><?php the_sub_field('grid_title', $langID); ?></h3>
+                    <div class="lh-1-2 text-light group-hover:text-[var(--mainColor)] mobile">
+                        <?php the_sub_field('grid_content', $langID); ?>
+                    </div>
+                </div>
+               
             </div>
-            <div class="lh-1-2 text-light group-hover:text-[var(--mainColor)]">
+            <div class="lh-1-2 text-light group-hover:text-[var(--mainColor)] desktop">
                 <?php the_sub_field('grid_content', $langID); ?>
             </div>
         </div>

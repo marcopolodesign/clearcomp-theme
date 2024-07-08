@@ -206,6 +206,8 @@ const runScripts = () => {
   
   const removeSolutionsEnd = () => {
     let solutions = Array.from(document.querySelectorAll('.solutions-ending div > h2'));
+
+    let solutionsByRole = Array.from(document.querySelectorAll('.solution-link-end'));
     if (solutions.length > 0) {
         document.querySelectorAll('.solutions-ending div > a').forEach(a => {
           a.classList.remove('hidden');
@@ -225,6 +227,20 @@ const runScripts = () => {
         document.querySelectorAll('.solutions-ending div > a')[matchingIndex].classList.add('hidden');
         
         console.log(matchingIndex);
+    }
+
+    if (solutionsByRole.length > 0) {
+      const currentPathname = window.location.pathname;
+
+      solutionsByRole.forEach((element) => {
+        element.classList.remove('hidden');
+        const href = element.getAttribute('href');
+      
+        if (href && href.indexOf(currentPathname) !== -1) {
+          console.log(`Match found! '${currentPathname}' is in '${href}'`);
+          element.classList.add('hidden');
+        }
+      });
     }
   }
 

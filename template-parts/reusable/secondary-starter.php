@@ -16,13 +16,13 @@ endif;
 ?>
 
 <?php if (get_sub_field('layout') == 'side') : ?>
-<div class="home-starter secondary-starter min-h-[60vh] flex column-mobile items-center container mt-[80px] md:mt-[160px] py-20 pl-20 pr-0 bg-[var(<?php echo $colors; ?>)] rounded-[8px] smooth-t" >
-    <div class="w-2/5 flex flex-col">       
-        <h1 class="text-5xl text-[var(<?php echo $textColors;?>)] font-normal mb-3"><?php the_sub_field('main_title');?></h1>
-        <p class=' text-[var(<?php echo $textColors;?>)] mb-5 text-xl'><?php the_sub_field('sub_parragraph');?></p>
+<div class="home-starter secondary-starter min-h-[60vh] flex column-mobile items-center container mt-[80px] md:mt-[160px] py-24 sm:py-20 pl-20 pr-0 bg-[var(<?php echo $colors; ?>)] rounded-[8px] smooth-t" >
+    <div class="w-2/5 flex flex-col sm:justify-start justify-center sm:items-start items-center">       
+        <h1 class="text-5xl text-[var(<?php echo $textColors;?>)] font-normal mb-3 sm:text-left text-center"><?php the_sub_field('main_title');?></h1>
+        <p class=' sm:text-left text-center text-[var(<?php echo $textColors;?>)] mb-5 text-xl'><?php the_sub_field('sub_parragraph');?></p>
 
          <?php if( $link ): ?>
-            <a class="button btn btn-primary starter bg-[var(<?php echo $ctaColor; ?>)] self-start text-[var(<?php echo $textCTAColors; ?>)]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <a class="button btn btn-primary starter bg-[var(<?php echo $ctaColor; ?>)] sm:self-start text-[var(<?php echo $textCTAColors; ?>)]" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php endif; ?>
 
 

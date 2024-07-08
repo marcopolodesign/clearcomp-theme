@@ -528,6 +528,17 @@ div[data-barba='container'].home .faq-item::after {
         margin-top: 20px;
     }
 
+    .images-content > div {
+        padding: 0;
+    }
+
+    .text-images.my-36 {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+
+
 
     /* Tailwind fixes */
 
@@ -797,7 +808,46 @@ div[data-barba='container'].faq .relative-mobile {
     margin-top: 0px
  }
 
+ div[data-barba='container'].home .text-images, div[data-barba='container'].Home  .text-images{
+    flex-direction: column-reverse !important;
+ }
+
+    div[data-barba='container'].home .faq-item *, div[data-barba='container'].Home .faq-item * {
+        font-size: 18px !important;
+    }
+      
+    div[data-barba='container'].home .faq-item, div[data-barba='container'].Home .faq-item {
+        margin-bottom: 20px !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+ .about-cc-text span {
+    text-decoration: none !important;
+    pointer-events: none;
+ }
+
+
+ .images-content {
+    margin-top: 0px;
+}
+
+.about-cc-text {
+    pointer-events: none;
+}
+
+.flex.column-mobile.jic.pb-3.border-b.border-b-black > h4 {
+    text-align: center;
+}
+
+.about-cc-text > div  {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+}
+
  /* About Us mobile */
+
+ 
 
  .icon-grid-container {
     padding-left: 0px !important;
@@ -810,6 +860,12 @@ div[data-barba='container'].faq .relative-mobile {
 
 
 /* Tailwind fix */
+
+.my-36 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+
+}
 
 .py-20 {
     padding-top: 2rem !important;

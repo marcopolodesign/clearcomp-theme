@@ -5,9 +5,8 @@
     </div>
 
     <div class="flex column-mobile justify-between items-start mt-10">
-        <div class="w-1/2 about-cc-text">
+        <div class="w-1/2 about-cc-text ">
             <?php the_sub_field('base');?>
-
             <a href="/about" class="btn btn-primary bg-main-color text-white block sm:text-left text-center sm:w-max">Discover more</a>
         </div>
 
