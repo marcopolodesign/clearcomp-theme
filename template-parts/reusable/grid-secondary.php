@@ -15,17 +15,22 @@
             <?php endif; ?>
         </div>
         <div>
-            <div class="flex gap-2 mb-4">
+            <div class="flex gap-2 mb-4 items-center">
                 <?php 
                 $icon = get_sub_field('grid_icon');
                 if( !empty( $icon ) ): ?>
-                <div class=" w-10">
+                <div class="w-10">
                  <img class="margin-auto" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
                 </div>
                 <?php endif; ?>
-                <h3 class="text-black text-4xl group-hover:text-[var(--mainColor)]"><?php the_sub_field('grid_title'); ?></h3>
+                <div class="flex flex-col">
+                    <h3 class="text-black text-4xl group-hover:text-[var(--mainColor)]"><?php the_sub_field('grid_title'); ?></h3>
+                    <div class="lh-1-2 text-light group-hover:text-[var(--mainColor)] mobile">
+                        <?php the_sub_field('grid_content'); ?>
+                    </div>
+                </div>
             </div>
-            <div class="lh-1-2 text-light group-hover:text-[var(--mainColor)]">
+            <div class="lh-1-2 text-light group-hover:text-[var(--mainColor)] desktop">
                 <?php the_sub_field('grid_content'); ?>
             </div>
         </div>

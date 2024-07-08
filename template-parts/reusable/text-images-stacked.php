@@ -14,13 +14,13 @@
     <?php endif; ?>
 
     <?php if (get_sub_field('image_2')) : ?>
-        <div class="w-[35%] absolute top-0 translate-y-1/4 -translate-x-1/4">
+        <div class="w-[45%] sm:w-[35%] absolute top-0 translate-y-[-36%] translate-x-[8%] sm:translate-y-1/4 sm:-translate-x-1/4">
             <img src="<?php echo get_sub_field('image_2')['url']; ?>" alt="<?php echo get_sub_field('image_2')['alt']; ?>" />
         </div>
     <?php endif; ?>
 
     <?php if (get_sub_field('image_3')) : ?>
-        <div class="w-[50%] absolute bottom-0 translate-y-1/4 right-20">
+        <div class="sm:w-[50%] w-[65%] absolute bottom-0 translate-y-[30%] translate-x-[16%] sm:translate-y-1/4 right-20">
             <img src="<?php echo get_sub_field('image_3')['url']; ?>" alt="<?php echo get_sub_field('image_3')['alt']; ?>" />
         </div>
     <?php endif; ?>

@@ -13,7 +13,7 @@
 
 </div> <!-- End Barba Container -->
 
-	<div class=" mt-80 container flex flex-col justify-center items-center">
+	<div class="mt-36 sm:mt-80 container flex flex-col justify-center items-center">
 		<h2 class="text-6xl text-gray-800 text-center mb-4"><?php pll_e('Calculating'); ?> <span id="yearCounter"><?php echo date('Y'); ?></span></h2>
 		<div class="w-3/4">
 			<img src="/wp-content/uploads/2023/09/network-3537400_640-1.png" />
@@ -38,10 +38,10 @@
 		</div>
 
 		<div class="flex flex-col sm:w-1/2">
-			<div class="flex justify-between items-start mb-5">
-				<p class="text-white font-bold w-1/3"><?php pll_e('Solutions'); ?></p>
-				<p class="text-white font-bold w-1/3"><?php pll_e('Technology'); ?></p>
-				<p class="text-white font-bold w-1/3"><?php pll_e('Info'); ?></p>
+			<div class="flex sm:justify-between sm:items-start mb-5 justify-center items-center">
+				<p class="text-white font-bold w-1/3 desktop"><?php pll_e('Solutions'); ?></p>
+				<p class="text-white font-bold w-1/3 desktop"><?php pll_e('Technology'); ?></p>
+				<p class="text-white font-bold w-1/3 text-center sm:text-left"><?php pll_e('Info'); ?></p>
 			</div>
 
 			<div class="flex flex-wrap justify-between gap-5">
@@ -50,7 +50,7 @@
 						'theme_location' => 'footer',
 						'menu_id'        => 'footer',
 						'container' => 'ul',
-						'menu_class' => 'footer-nav flex flex-wrap jic list-none text-white [&>*]:w-1/3 [&>*]:mb-5',
+						'menu_class' => 'footer-nav flex flex-wrap jic list-none text-white [&>*]:w-1/3 [&>*]:mb-2 sm:[&>*]:mb-5 [&>*]:justify-center sm:[&>*]:justify-start [&>*]:flex column-mobile justify-center items-center',
 					) );
 				?>
 			</div>
