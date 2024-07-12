@@ -377,6 +377,23 @@ const steps = () => {
 
 runScripts();
 
+const progressBar = () => {
+  const bodyTag = document.querySelector('body');
+  const progressBarWidth = document.querySelector('div.progress');
+
+  document.addEventListener('scroll', function () {
+    const pixels = window.pageYOffset;
+    const pageHeight = bodyTag.getBoundingClientRect().height;
+    const totalScrollableDistance = pageHeight - window.innerHeight;
+
+    const percentage = pixels / totalScrollableDistance;
+
+    progressBarWidth.style.width = `${100 * percentage}%`;
+  });
+};
+
+
+
 let icebergParts;
 
 barba.init({
@@ -525,6 +542,12 @@ barba.init({
     namespace: 'faq', 
     afterEnter() {  
       faqQuestions();
+    }
+  }, 
+  {
+    namespace: 'blog-single', 
+    afterEnter() {  
+      progressBar()
     }
   }, 
   {

@@ -4,37 +4,28 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Clear_Comp
- */
+*/
 
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<div data-barba="container" class="blog-single" data-barba-namespace="blog-single">
+<div class="progress fixed left-0 top-0"></div>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<div class="container mx-auto">
+	<?php
+			while ( have_posts() ) :
+				the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+					get_template_part( 'template-parts/content', get_post_type() );
+			
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'clearcomp' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'clearcomp' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+			endwhile; // End of the loop.
+			?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
+	</div>
+		
+	</div><!-- End barba Container -->
 
 <?php
-get_sidebar();
 get_footer();
