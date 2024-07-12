@@ -121,7 +121,7 @@
         
     </section>
 
-    <section class="container py-20 flex items-center justify-between gap-10">
+    <section class="container py-20 flex flex-wrap sm:flex-row flex-col items-center justify-between gap-10">
     <?php $blogsArgs = array(
                             'post_type' => 'post',
                             'orderby' => 'date',
@@ -145,7 +145,7 @@
                     // esto para ponerle al final del a tag the_field('width'); echo " "; echo $barba; 
                     ?>
 
-                    <a href="<?php echo $link; ?>" class="group no-deco overflow-hidden flex flex-col justify-between items-end rounded-md w-full relative flex-1 h-full">
+                    <a href="<?php echo $link; ?>" class="group no-deco overflow-hidden flex flex-col justify-between items-end rounded-md w-full sm:w-[45%] relative h-full">
                    
                         <div class="p-6 sm:p-8 latest-blog-info relative z-20 flex flex-col gap-20 h-full justify-between">
                             <div class="flex jic">
