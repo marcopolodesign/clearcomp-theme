@@ -127,7 +127,7 @@
                             'orderby' => 'date',
                             'order' => 'DESC',
                             'cat' => 13,
-                            'posts_per_page' => -1, 
+                            'posts_per_page' => 10, 
                             'offset' => 2
                         );
                 $blogs = new WP_Query( $blogsArgs ); 
