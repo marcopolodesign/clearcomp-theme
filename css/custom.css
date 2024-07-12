@@ -130,6 +130,11 @@ a.btn-primary.main-color-bg:hover {
     background: var(--secondaryGradient);
 }
 
+.terciary-color-bg {
+    background: var(--terciaryColor);
+}
+
+
 .gradient-text {
     background-image: var(--mainGradient);
     -webkit-background-clip: text; /* For older versions of webkit-based browsers */
@@ -444,6 +449,16 @@ div[data-barba='container'].home .faq-item::after {
  
  }
 
+ .progress {
+    width: 1px;
+    background-color: var(--mainColor);
+    z-index: 9999;
+    height: 3px;
+    top: 65px;
+  }
+  
+  
+
  /* START MOBILE */
 
 
@@ -593,7 +608,8 @@ header#masthead {
     z-index: 9999999;
     top: 54px;
   }
-  
+
+ 
   
   .menu-container {
     padding: 0px 20px;

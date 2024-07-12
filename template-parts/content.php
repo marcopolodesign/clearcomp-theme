@@ -1,63 +1,87 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Clear_Comp
+<?php 
+/** 
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				clearcomp_posted_on();
-				clearcomp_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
 
-	<?php clearcomp_post_thumbnail(); ?>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'clearcomp' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+<div class="w-full sm:py-26 mx-auto pt-20 sm:pt-28 pb-5 flex flex-col justify-center items-center">
+		<h1 class="text-6xl text-[var(--mainDarkColor)] text-center font-medium"><?php the_title();?></h1>
+		<p class="main-cta secondary-color-bg text-[var(--mainColor)] w-max text-center mx-auto">Published on <?php the_date();?></p>
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'clearcomp' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+		<!-- <div class="flex items-center mt4 pb4 social-sharer-container">
+			<p class="f3 main-color mr3">Share this article:</p>
+			<?php get_template_part('template-parts/content/social-sharer', get_post_type());?> 
+		</div> -->
+	</div>
 
-	<footer class="entry-footer">
-		<?php clearcomp_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+
+    <section class="relative cs-project-img center w-full " style="height: 50vh !important;">
+        <div class="absolute-cover bg-center" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');"></div>
+    </section>
+
+    <section class="mt5 container flex column-mobile justify-between pb5">
+        <div class="w-[60%] content-holder">
+             <!-- <h1 class="f1 white gt-super ttu"><?php the_title();?></h1> -->
+             <!-- <div class="flex items-center mt4 pb4 social-sharer-container">
+                  <p class="f3 main-color mr3">Share this article:</p>
+                  <?php get_template_part('template-parts/content/social-sharer', get_post_type());?> 
+             </div> -->
+
+
+            <div class="my-12 content-inner">
+                 <?php the_content();?>
+            </div>
+
+            <!-- <div class="flex items-center mt4 pt4 last-sharer">
+                  <p class="f3 main-color mr3">Share this article:</p>
+                  <?php get_template_part('template-parts/content/social-sharer', get_post_type());?> 
+             </div>
+     -->
+        </div>
+
+        <div class="w-[30%]">
+            <div class="flex flex-column">
+             <!-- <p class="main-cta bg-main-color mt3 w-max">Written by <?php the_author();?></p> -->
+            </div>       
+        </div>            
+    </section>
+
+    <section class="related-reads pb5 hidden">
+        <h2 class="white mt5 tc f2">
+            Related reads:
+        </h2>
+
+
+    <div class="blogs-container relative-blogs container flex justify-between flex-wrap mt4">
+        <?php $allBlogsArgs = array(
+                            'post_type' => 'post',
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                            'cat' => 12,
+                            'posts_per_page' => 2, 
+                            'offset' => 1,
+                            'post__not_in' => array( $post->ID ),
+                        );
+        $allBlogs = new WP_Query( $allBlogsArgs ); 
+        if ( $allBlogs->have_posts() ) : while ( $allBlogs->have_posts() ) : $allBlogs->the_post();
+                        
+            get_template_part('template-parts/grid-child-blog');
+        
+        endwhile; endif; wp_reset_postdata();?>
+    </div>
+
+    <a href="/case-studies" class="secondary-cta white no-deco mt5 center w-max" style="display: flex;">
+        View All
+    </a>
+
+    </section>
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<style>
+	.content-inner p {
+		margin-bottom: 20px;
+	}
+</style>
