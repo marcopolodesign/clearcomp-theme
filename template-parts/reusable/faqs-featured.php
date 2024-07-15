@@ -30,7 +30,7 @@ if ($lang == 'es') : $langID = 478; else : $langID = 6; endif;
     ?>
     </div> 
 
-    <a href="/faq" class="btn btn-primary bg-main-color text-white w-max mobile text-center block !mt-0"><?php pll_e('View All'); ?></a> 
+    <a href="/faq" class="btn btn-primary bg-main-color text-white w-max mobile text-center block sm:hidden !mt-0"><?php pll_e('View All'); ?></a> 
 
 </div>
 
