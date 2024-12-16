@@ -26,8 +26,9 @@ get_header(); ?>
                                 'post_type' => 'post',
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'cat' => 38,
+                                // 'cat' => 38,
                                 'posts_per_page' => 1, 
+                                'category_name' => 'recursos',
                             );
                     $blogs = new WP_Query( $blogsArgs ); 
                     if ( $blogs->have_posts() ) : while ( $blogs->have_posts() ) : $blogs->the_post();?>
@@ -76,7 +77,8 @@ get_header(); ?>
                                 'post_type' => 'post',
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'cat' => 38,
+                                // 'cat' => 38,
+                                'category_name' => 'recursos',
                                 'posts_per_page' => 1, 
                                 'offset' => 1
                             );
@@ -130,7 +132,8 @@ get_header(); ?>
                             'post_type' => 'post',
                             'orderby' => 'date',
                             'order' => 'DESC',
-                            'cat' => 38,
+                            // 'cat' => 38,
+                            'category_name' => 'recursos',
                             'posts_per_page' => 10, 
                             'offset' => 2
                         );
