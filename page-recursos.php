@@ -1,4 +1,7 @@
 <?php
+/**
+ * Template Name: Recursos
+ */
 get_header(); ?>
 
 <div data-barba="container" class="resources" data-barba-namespace="resources" data-header-color="">
