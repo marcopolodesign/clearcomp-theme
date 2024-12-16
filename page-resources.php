@@ -122,7 +122,14 @@ get_header(); ?>
         
     </section>
 
-    <section class="container py-20 flex flex-wrap sm:flex-row flex-col items-center justify-between gap-10">
+    <?php $category = get_category(13);
+    $catName;
+    if ($category) {
+        $catName = $category->name;
+    }?>
+
+    <section class="container py-20 flex flex-wrap sm:flex-row flex-col items-center justify-between gap-10 <?php echo $catName; ?>">
+
     <?php $blogsArgs = array(
                             'post_type' => 'post',
                             'orderby' => 'date',
