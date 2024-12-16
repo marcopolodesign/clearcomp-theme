@@ -23,7 +23,8 @@ get_header(); ?>
                                 'post_type' => 'post',
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'cat' => 19,
+                                // 'cat' => 19,
+                                'category__in' => array(19, 38),
                                 'posts_per_page' => 1, 
                             );
                     $blogs = new WP_Query( $blogsArgs ); 
@@ -73,7 +74,7 @@ get_header(); ?>
                                 'post_type' => 'post',
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'cat' => 19,
+                                'category__in' => array(19, 38),
                                 'posts_per_page' => 1, 
                                 'offset' => 1
                             );
@@ -127,7 +128,7 @@ get_header(); ?>
                             'post_type' => 'post',
                             'orderby' => 'date',
                             'order' => 'DESC',
-                            'cat' => 19,
+                            'category__in' => array(19, 38),
                             'posts_per_page' => 10, 
                             'offset' => 2
                         );
