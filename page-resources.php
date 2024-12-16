@@ -153,7 +153,13 @@ get_header(); ?>
                     // esto para ponerle al final del a tag the_field('width'); echo " "; echo $barba; 
                     ?>
 
-                    <a href="<?php echo $link; ?>" class="group no-deco overflow-hidden flex flex-col justify-between items-end rounded-md w-full sm:w-[45%] relative h-full">
+                    <a href="<?php echo $link; ?>" class="group no-deco overflow-hidden flex flex-col justify-between items-end rounded-md w-full sm:w-[45%] relative h-full ">
+                <?php
+                $category = get_the_category();
+                if ( ! empty( $category ) ) {
+                    echo esc_html( $category[0]->name );
+                }
+                ?>
                    
                         <div class="p-6 sm:p-8 latest-blog-info relative z-20 flex flex-col gap-20 h-full justify-between">
                             <div class="flex jic">
