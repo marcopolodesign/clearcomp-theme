@@ -5,7 +5,7 @@ get_header(); ?>
    
     <section class="container pt-20 sm:pt-28 pb-5">
         <div class="flex flex-col gap-2 mb-12">
-            <h2 class="main-color text-xl">News & Resources</h2>
+            <h2 class="main-color text-xl">Noticias & Recursos</h2>
             <h1 class="main-dark-color font-medium text-6xl"><?php the_title();?></h1>
         </div>
             
@@ -23,7 +23,7 @@ get_header(); ?>
                                 'post_type' => 'post',
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'cat' => 13,
+                                'cat' => 38,
                                 'posts_per_page' => 1, 
                             );
                     $blogs = new WP_Query( $blogsArgs ); 
@@ -56,7 +56,7 @@ get_header(); ?>
                                 <p class="post-date text-white mb-3"><?php echo get_the_date(); ?></p>
                                 <h3 class="white text-3xl text-[var(--mainDarkColor)] font-medium mb-3"><?php the_title(); ?></h3>
                                     <p class="mb-5"><?php echo wp_trim_words( get_the_content(), 21 , '...' ); ?></p> 
-                                <p class="main-cta mt4 bg-white ">Read More</p>
+                                <p class="main-cta mt4 bg-white ">Ver más</p>
                             </div>
                         </a> 
 
@@ -67,13 +67,13 @@ get_header(); ?>
                 <div class="latest-blog relative sm:w-1/2 flex flex-col">
 
                 <div class="rounded-md bg-[var(--terciaryColor)] p-6 sm:p-8 mb-8">
-                    <p class="">Get updates on our products, latest releases and keep up to date with our latest news.</p>
+                    <p class="">Recibe actualizaciones sobre nuestros productos, últimos lanzamientos y mantente al día con nuestras últimas noticias.</p>
                 </div>
                 <?php $blogsArgs = array(
                                 'post_type' => 'post',
                                 'orderby' => 'date',
                                 'order' => 'DESC',
-                                'cat' => 13,
+                                'cat' => 38,
                                 'posts_per_page' => 1, 
                                 'offset' => 1
                             );
@@ -97,7 +97,7 @@ get_header(); ?>
                             <div class="p-6 sm:p-8 latest-blog-info relative z-20 flex flex-col gap-20 h-full justify-between">
                                 <div class="flex jic">
                                     <p class="post-date text-white"><?php echo get_the_date(); ?></p>
-                                    <p class="text-white ">Read More</p>
+                                    <p class="text-white ">Ver más</p>
                                 </div>
 
                                 <div>
@@ -127,7 +127,7 @@ get_header(); ?>
                             'post_type' => 'post',
                             'orderby' => 'date',
                             'order' => 'DESC',
-                            'cat' => 13,
+                            'cat' => 38,
                             'posts_per_page' => 10, 
                             'offset' => 2
                         );
@@ -151,7 +151,7 @@ get_header(); ?>
                         <div class="p-6 sm:p-8 latest-blog-info relative z-20 flex flex-col gap-20 h-full justify-between">
                             <div class="flex jic">
                                 <p class="post-date text-white"><?php echo get_the_date(); ?></p>
-                                <p class="text-white ">Read More</p>
+                                <p class="text-white ">Ver más</p>
                             </div>
 
                             <div>
