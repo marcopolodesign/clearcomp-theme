@@ -49,6 +49,18 @@
         </div>            
     </section>
 
+    <section class="newsletter-form my-12 container mx-auto">
+        <div class="flex justify-between items-center bg-[var(--mainColorLight)] p-12 rounded-md ">
+            <h3 class="white text-xl sm:text-2xl">
+                Want to stay up to date with our latest content?<br>
+                <span class="font-medium mt-2">Sign up to our newsletter.</span>
+            </h3>
+
+            <div>
+            <?php echo do_shortcode('[hubspot type="form" portal="22451805" id="fbdce0ff-2795-49e2-b2e5-c734d2753c3d"]'); ?>
+            </div>
+    </section>
+
     <section class="related-reads pb5 hidden">
         <h2 class="white mt5 tc f2">
             Related reads:
