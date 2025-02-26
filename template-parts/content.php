@@ -50,14 +50,14 @@
     </section>
 
     <section class="newsletter-form my-12 container mx-auto">
-        <div class="flex justify-between items-center bg-[var(--mainColorLight)] p-12 rounded-md ">
-            <h3 class="white text-xl sm:text-2xl">
+        <div class="flex flex-col sm:flex-row justify-between items-center bg-[var(--mainColorLight)] p-12 rounded-md gap-10 ">
+            <h3 class="white text-xl sm:text-2xl m:w-1/2 w-100">
                 Want to stay up to date with our latest content?<br>
                 <span class="font-medium mt-2">Sign up to our newsletter.</span>
             </h3>
-
-            <div>
-            <?php echo do_shortcode('[hubspot type="form" portal="22451805" id="fbdce0ff-2795-49e2-b2e5-c734d2753c3d"]'); ?>
+            <div class="sm:w-1/2 w-100 mx-auto">
+                <?php // get_template_part('template-parts/hs-form');?>
+                <?php echo do_shortcode('[hubspot type="form" portal="22451805" id="fbdce0ff-2795-49e2-b2e5-c734d2753c3d"]'); ?>
             </div>
     </section>
 

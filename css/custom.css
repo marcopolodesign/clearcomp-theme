@@ -914,3 +914,23 @@ div[data-barba='container'].faq .relative-mobile {
     line-height: 1.5rem !important;
 }
 }
+
+
+/* HS Integration */
+
+.newsletter-form .hs_email input {
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px 5px;
+
+
+}
+
+.newsletter-form .actions input {
+    background-color: var(--mainColor);
+    color: #fff !important;
+    width: 100%;
+    padding: 10px 5px;
+    margin-top: 10px;
+    border-radius: 4px
+}
