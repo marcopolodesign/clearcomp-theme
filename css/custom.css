@@ -919,18 +919,18 @@ div[data-barba='container'].faq .relative-mobile {
 /* HS Integration */
 
 .newsletter-form .hs_email input {
-    width: 100%;
-    border-radius: 4px;
-    padding: 10px 5px;
+    width: 100% !important;;
+    border-radius: 4px !important;;
+    padding: 10px 5px !important;;
 
 
 }
 
-.newsletter-form .actions input {
-    background-color: var(--mainColor);
+.newsletter-form .actions input, .hs-button {
+    background-color: var(--mainColor) !important;
     color: #fff !important;
-    width: 100%;
-    padding: 10px 5px;
-    margin-top: 10px;
-    border-radius: 4px
+    width: 100% !important;
+    padding: 10px 5px !important;
+    margin-top: 10px !important;
+    border-radius: 4px !important;
 }
