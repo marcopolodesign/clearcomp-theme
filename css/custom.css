@@ -926,7 +926,7 @@ div[data-barba='container'].faq .relative-mobile {
 
 }
 
-.newsletter-form .actions input, .hs-button {
+.newsletter-form .actions input, input.hs-button {
     background-color: var(--mainColor) !important;
     color: #fff !important;
     width: 100% !important;
