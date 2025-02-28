@@ -25,12 +25,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PF6VK8MJ');</script>
 <!-- End Google Tag Manager -->
 
-
-
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PF6VK8MJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+<script>!function () {var reb2b = window.reb2b = window.reb2b || []; if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = ["identify", "collect"]; reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments); args.unshift(method);reb2b.push(args);return reb2b;};}; for (var i = 0; i < reb2b.methods.length; i++) {var key = reb2b.methods[i];reb2b[key] = reb2b.factory(key);} reb2b.load = function (key) {var script = document.createElement("script");script.type = "text/javascript";script.async = true; script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/5NRP9HQM4PO1.js.gz"; var first = document.getElementsByTagName("script")[0]; first.parentNode.insertBefore(script, first);}; reb2b.SNIPPET_VERSION = "1.0.1";reb2b.load("5NRP9HQM4PO1");}();</script> 
+
+<script> (function () { var w = window; var swan = (w.swan = w.swan || []); if (swan.isLoaded) return; swan.isLoaded = true; swan.pk = 'cm7ogc3px0006jv05taolg7ou'; var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true; script.src = 'https://swan-scripts.s3.amazonaws.com/bundle.js'; var head = document.getElementsByTagName('head')[0]; head.appendChild(script); })(); </script>
 
 
 	<?php wp_head(); ?>
@@ -87,4 +89,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 	
 	<?php get_template_part('template-parts/contact'); ?>
+	<?php // get_template_part('template-parts/hs-pop'); ?>
 	<div data-barba="wrapper"><!-- Start Barba Container -->
