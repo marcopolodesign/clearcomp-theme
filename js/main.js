@@ -64,7 +64,8 @@ const runScripts = () => {
           dataLayer.push({
               'event': 'formSubmit',
               'formId': 'contact-form',
-              'formName': 'Contact Form'
+              'formName': 'Contact Form', 
+              'formEmail': form.querySelector('input[type="email"]')?.value || '',
           });
           console.log('sending forms')
       });
@@ -1049,3 +1050,43 @@ function changeBgColorOnEnterViewport() {
 // Call the function to initiate the observation
 changeBgColorOnEnterViewport();
 
+
+
+function setCookie(name, value, days) {
+  let expires = "";
+  if (days) {
+      let date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Convert days to milliseconds
+      expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(name) {
+  let nameEQ = name + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function showNewsletterPopup() {
+  let modal = document.getElementById("newsletter-popup");
+  let closeBtn = document.getElementById("close-popup");
+
+  if (!getCookie("newsletter_popup_shown")) {
+      modal.classList.remove("hidden"); // Show modal
+      modal.classList.add("open"); // Add 'open' class
+
+      closeBtn.addEventListener("click", function() {
+          modal.classList.add("hidden"); // Hide modal
+          modal.classList.remove("open"); // Remove 'open' class
+          setCookie("newsletter_popup_shown", "true", 2); // Set cookie for 2 days
+      });
+  }
+}
+
+// Run when the page loads
+// window.onload = showNewsletterPopup;
