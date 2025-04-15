@@ -934,3 +934,11 @@ div[data-barba='container'].faq .relative-mobile {
     margin-top: 10px !important;
     border-radius: 4px !important;
 }
+
+
+h2.wp-block-heading {
+    font-size: 2rem !important;
+    margin-bottom: 20px !important;
+    margin-top: 60px !important;
+    color: var(--mainColor) !important;
+}
